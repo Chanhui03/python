@@ -1,7 +1,7 @@
 # N과 M (5)
 
 n, m = map(int, input().split())
-data = list(map(int , input().split()))
+data = list(map(int, input().split()))
 data.sort()
 visited = [False] * n
 out = []

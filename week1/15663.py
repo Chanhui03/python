@@ -19,4 +19,7 @@ n, m = map(int, input().split())
 num = sorted(list(map(int, input().split())))
 visited = [0] * n
 answer = []
+
 solution()
+
+# check가 어떻게 되는지 중점적으로 보기
