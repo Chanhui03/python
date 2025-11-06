@@ -31,6 +31,7 @@ for _ in range(n - 1):
 
 # 첫 번째 BFS로 임의의 노드에서 가장 먼 노드 찾기
 farthest_node, _ = bfs(1)
+
 # 두 번째 BFS로 그 노드에서 가장 먼 노드까지의 거리 찾기
 _, diameter = bfs(farthest_node)
 print(diameter)
