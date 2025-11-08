@@ -3,6 +3,9 @@
 import sys
 input = sys.stdin.readline
 
+# 런타임 에러 방지용 재귀 한도 설정
+sys.setrecursionlimit(10**6)
+
 v, e = map(int, input().split())
 
 edges = []
