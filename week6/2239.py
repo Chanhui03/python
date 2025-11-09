@@ -2,7 +2,6 @@
 
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10**6)
 
 board = [list(map(int, input().strip())) for _ in range(9)]
 empty_positions = []
