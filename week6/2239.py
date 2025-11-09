@@ -2,8 +2,9 @@
 
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
-board = [list(map(int, input().split())) for _ in range(9)]
+board = [list(map(int, input().strip())) for _ in range(9)]
 empty_positions = []
 
 # 빈 칸 위치 저장
@@ -14,7 +15,7 @@ for i in range(9):
 
 # 특정 숫자를 해당 위치에 넣어도 되는지 확인
 def is_valid(row, col, num):
-    # 행, 열, 3x3 박스 검사
+    # 행, 열 검사
     for i in range(9):
         if board[row][i] == num:
             return False
@@ -33,7 +34,7 @@ def solve(index):
     # 모든 빈 칸을 채웠다면 출력 후 종료
     if index == len(empty_positions):
         for row in board:
-            print(' '.join(map(str, row)))
+            print(''.join(map(str, row)))
         sys.exit(0)
     
     # 현재 빈 칸 위치
@@ -42,11 +43,8 @@ def solve(index):
     # 1부터 9까지 숫자 시도
     for num in range(1, 10):
         if is_valid(row, col, num):
-            # 해당 숫자 넣기
             board[row][col] = num
-            # 다음 빈 칸으로 이동
             solve(index + 1)
-            # 백트래킹: 원래대로 되돌리기
             board[row][col] = 0
 
 solve(0)
