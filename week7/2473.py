@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-# 용액 특성값들 입력받기
+# 용액 특성값들 정렬해서 입력받기
 list = sorted(list(map(int, input().split())))
 
 # 임의의 max값
